@@ -1,0 +1,5 @@
+com\github\peaquyen\com\xjournal\App.class
+com\github\peaquyen\com\xjournal\Utils.class
+com\github\peaquyen\com\xjournal\DBConnection.class
+com\github\peaquyen\com\xjournal\JournalDAO.class
+com\github\peaquyen\com\xjournal\Journal.class
