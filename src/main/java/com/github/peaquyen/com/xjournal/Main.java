@@ -1,9 +1,9 @@
 package com.github.peaquyen.com.xjournal;
 
 import java.awt.Color;
-import org.jdesktop.animation.timing.Animator;
-import org.jdesktop.animation.timing.TimingTargetAdapter;
-import org.jdesktop.animation.timing.interpolation.PropertySetter;
+//import org.jdesktop.animation.timing.Animator;
+//import org.jdesktop.animation.timing.TimingTargetAdapter;
+//import org.jdesktop.animation.timing.interpolation.PropertySetter;
 
 public class Main extends javax.swing.JFrame {
     
@@ -12,7 +12,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         //setBackground(new Color(0, 0, 0, 0));
-        init();
+//        init();
     }
 
     @SuppressWarnings("unchecked")
@@ -44,9 +44,9 @@ public class Main extends javax.swing.JFrame {
     }
     private void init() {
         home = new Home();
-        this.setContentPane(home.getContentPane());
-        this.invalidate();
-        this.validate();
+//        this.setContentPane(home.getContentPane());
+//        this.invalidate();
+//        this.validate();
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
