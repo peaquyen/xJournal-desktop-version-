@@ -7,12 +7,12 @@ public class App {
         JournalDAO journalDAO = new JournalDAO();
 
         // Create a new journal entry
-        Journal newJournal = new Journal("Title", "Description", "Happy", "[]", "2024-06-18 12:00:00", 1);
+        JournalModel newJournal = new JournalModel("Title", "Description", "Happy", "[]", "2024-06-18 12:00:00", 1);
         journalDAO.create(newJournal);
 
         // Retrieve all journal entries for a user
-        List<Journal> journals = journalDAO.getMultiple(1);
-        for (Journal journal : journals) {
+        List<JournalModel> journals = journalDAO.getMultiple(1);
+        for (JournalModel journal : journals) {
             System.out.println(journal);
         }
 

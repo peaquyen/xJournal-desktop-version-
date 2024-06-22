@@ -11,7 +11,7 @@ public class JournalDAO {
         connection = DBConnection.getConnection();
     }
 
-    public void create(Journal journal) {
+    public void create(JournalModel journal) {
         String sql = "INSERT INTO journals (title, description, feeling, images, date, ownerId) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             statement.setString(1, journal.getTitle());
@@ -33,14 +33,14 @@ public class JournalDAO {
         }
     }
 
-    public List<Journal> getMultiple(int ownerId) {
-        List<Journal> journals = new ArrayList<>();
+    public List<JournalModel> getMultiple(int ownerId) {
+        List<JournalModel> journals = new ArrayList<>();
         String sql = "SELECT * FROM journals WHERE ownerId = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, ownerId);
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    Journal journal = new Journal(
+                    JournalModel journal = new JournalModel(
                             resultSet.getString("title"),
                             resultSet.getString("description"),
                             resultSet.getString("feeling"),
@@ -58,7 +58,7 @@ public class JournalDAO {
         return journals;
     }
 
-    public void update(int id, Journal journal, int ownerId) {
+    public void update(int id, JournalModel journal, int ownerId) {
         String sql = "UPDATE journals SET title = ?, description = ?, feeling = ?, images = ?, date = ?, ownerId = ? WHERE id = ? AND ownerId = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, journal.getTitle());
